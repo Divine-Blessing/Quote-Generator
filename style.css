@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Jost&family=Macondo&family=Pangolin&family=Poppins:wght@400;500&family=Rancho&family=Tsukimi+Rounded:wght@400;500;600&display=swap');
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Jost', sans-serif;
+    font-family: 'Pangolin', cursive;
+    font-family: 'Poppins', sans-serif;
+
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Macondo', cursive;
+    font-family: 'Rancho', cursive;
+    font-family: 'Tsukimi Rounded', sans-serif; */
+}
+body{
+    background: rgb(1, 3, 15);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: rgb(170, 78, 170);
+    margin: 0 22px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgb(61, 23, 61),
+    0 0 20px rgb(170, 78, 170),
+    0 0 50px rgb(170, 78, 170);
+    animation: animate 15s linear infinite;
+    animation-duration: calc(120s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background-color: crimson;
+    box-shadow: 0 0 0 2px rgb(83, 8, 23),
+    0 0 20px crimson,
+    0 0 50px crimson;    
+}
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
+.box{
+    position: absolute;
+    width: 550px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 0.5px solid rgba(255, 252, 252, 0.2);
+    box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+.box h2{
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-family: 'Pangolin', cursive;
+    letter-spacing: 3px;
+    margin: 20px 0 15px 0;
+}
+.box p{
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 24px;
+    color: white;
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+    height: 13vh;
+}
+.box p::before,
+.box p::after{
+    content: '" ';
+    /* font-size: 30px; */
+}
+.box hr{
+    width: 90%;
+    border: 1px solid rgba(100, 101, 110, 0.5);
+    border-radius: 20px;
+    margin: 12px auto;
+}
+.box .share{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 55px;
+    margin: 0 auto;
+}
+.box .share .icons{
+    display: flex;
+}
+.box .share a{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    background-color: rgb(170, 78, 170);
+}
+.box .share a:hover{
+    border: 2px solid rgb(170, 78, 170);
+    background-color: transparent;
+}
+.box .share a:hover img{
+    transition: all 250ms ease-in-out;
+    transform: scale(.7);
+}
+.box .share img{
+    height: 24px;
+}
+.box button{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px;
+    padding: 8px 20px;
+    letter-spacing: .5px;
+    color: white;
+    border: none;
+    background-color: rgb(170, 78, 170);
+    outline: 0;
+    cursor: pointer;
+}
+.box button:hover{
+    border: 1px solid rgb(170, 78, 170);
+    background: transparent;
+    color: rgb(170, 78, 170);
+    transition: all 25ms ease-in-out;
+}
+footer{
+    min-height: 8vh ;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer img{
+    height: 35px;
+    margin-right: 8px;
+}
+footer span{
+    font-family: 'Jost', sans-serif;
+    font-size: 22px;
+    color: white;
+}
+
+@media(max-width: 1100px){
+    .bubbles span{
+        margin: 0 15px;
+    }
+}
+
+@media(max-width: 980px){
+    .bubbles span{
+        margin: 0 12px;
+    }
+    .box{
+        width: 520px;
+        height: 240px;
+    }
+    .box h2{
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    .box p{
+        font-size: 16px;
+        line-height: 24px;
+        height: 16vh;
+    }
+    .box button{
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+}
+
+@media(max-width: 850px){
+    .bubbles span{
+        margin: 0 9px;
+    }
+}
+
+@media(max-width: 800px){
+    .stop{
+        display: none;
+    }
+    .bubbles span{
+        margin: 0 25px;
+    }
+}
+@media(max-width: 768px){
+    .bubbles span{
+        margin: 0 23px;
+    }
+    .box{
+        width: 500px;
+    }
+    .box h2{
+        font-size: 23px;
+    }
+    .box p{
+        font-size: 15px;
+    }
+    .box .share a{
+        height: 40px;
+        width: 40px;
+    }
+    .box .share img{
+        height: 22px;
+    }
+    .box button{
+        font-size: 15px;
+        padding: 8px 20px;
+    }
+    footer img{
+        height: 33px;
+        margin-right: 8px;
+    }
+    footer span{
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 700px){
+    .bubbles span{
+        margin: 0 20px;
+    }
+    .box{
+        height: 230px;
+    }
+    .box h2{
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+    .box p{
+        font-size: 15px;
+    }
+    .box .share a{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media(max-width: 650px){
+    .bubbles span{
+        margin: 0 17px;
+    }
+}
+
+@media(max-width: 600px){
+    .bubbles span{
+        margin: 0 15px;
+    }
+    .box{
+        width: 450px;
+    }
+    .box h2{
+        font-size: 23px;
+    }
+    .box p{
+        font-size: 15px;
+        line-height: 22px;
+    }
+    .box hr{
+        margin: 8px auto;
+    }
+    .box .share a{
+        height: 35px;
+        width: 35px;
+    }
+    .box .share img{
+        height: 22px;
+    }
+    .box button{
+        font-size: 15px;
+        padding: 6px 18px;
+    }
+    footer img{
+        height: 30px;
+        margin-right: 8px;
+    }
+    footer span{
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 570px){
+    .bubbles span{
+        margin: 0 13px;
+    }
+}
+
+@media(max-width: 530px){
+    .bubbles span{
+        margin: 0 11px;
+    }
+    .box{
+        width: 400px;
+        height: 240px;
+    }
+    .box h2{
+        font-size: 21px;
+    }
+    .box p{
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 22px;
+        height: 21vh;
+        width: 90%;
+    }
+    .box hr{
+        margin: 5px auto;
+    }
+    .box .share{
+        min-height: 48px;
+    }
+}
+@media(max-width: 500px){
+    .bubbles span{
+        margin: 0 9px;
+    }
+    .box{
+        width: 360px;
+        height: 240px;
+    }
+}
+@media(max-width: 470px){
+    .box{
+        height: 250px;
+    }
+    .box p{
+        height: 23vh;
+    }
+}
+
+@media(max-width: 450px){
+    .bubbles span{
+        margin: 0 23px;
+    }
+    .bubbles .secStop{
+        display: none;
+    }
+    .box h2{
+        font-size: 20px;
+    }
+    .box p{
+        font-size: 13px;
+    }
+    .box button{
+        font-size: 14px;
+        padding: 5px 17px;
+    }
+}
+
+@media(max-width: 425px){
+    .bubbles span{
+        margin: 0 20px;
+    }
+    .box{
+        height: 250px;
+        width: 330px;
+    }
+}
+
+@media(max-width: 400px){
+    .bubbles span{
+        margin: 0 18px;
+    }
+    .box{
+        width: 300px;
+        height: 260px;
+    }
+    .box p{
+        font-size: 13px;
+        height: 24vh;
+    }
+    .box .share{
+        width: 90%;
+    }
+    .box button{
+        font-size: 13px;
+        padding: 5px 17px;
+    }
+    footer img{
+        height: 28px;
+        margin-right: 5px;
+    }
+    footer span{
+        font-size: 16px;
+    }
+}
+@media(max-width: 380px){
+    .bubbles span{
+        margin: 0 16px;
+    }
+}
+@media(max-width: 360px){
+    .bubbles span{
+        margin: 0 18px;
+        width: 25px;
+        height: 25px;
+    }
+    .box{
+        width: 270px;
+        height: 260px;
+    }
+    .box h2{
+        font-size: 18px;
+    }
+    .box p{
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .box .share a{
+        height: 33px;
+        width: 33px;
+        margin-right: 5px;
+    }
+    .box .share img{
+        height: 18px;
+    }
+    .box button{
+        font-size: 13px;
+        padding: 5px 13px;
+    }
+}
+@media(max-width: 350px){
+    .bubbles span{
+        margin: 0 17px;
+    }
+}
+@media(max-width: 330px){
+    .bubbles span{
+        margin: 0 16px;
+    }
+}
+@media(max-width: 320px){
+    .bubbles span{
+        margin: 0 15px;
+    }
+    .box{
+        width: 250px;
+        height: 260px;
+    }
+    .box h2{
+        font-size: 17px;
+    }
+    .box p{
+        line-height: 19px;
+    }
+    .box .share a{
+        height: 31px;
+        width: 31px;
+        margin-right: 5px;
+    }
+    .box .share img{
+        height: 16px;
+    }
+    .box button{
+        font-size: 12px;
+    }
+    footer img{
+        height: 26px;
+    }
+    footer span{
+        font-size: 15px;
+    }
+}
+@media(max-width: 310px){
+    .bubbles span{
+        margin: 0 13px;
+    }
+}
